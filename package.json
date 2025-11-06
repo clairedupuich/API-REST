@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:api": "newman run ./newman_test/collection.json --environment ./newman_test/environment.json",
+    "test:api:report": "newman run './postman/prof_collection.json' -e './postman/prof_environment.json' -r htmlextra --reporter-htmlextra-export './reports/gestionProfil.html'",
+    "test:api:report:iteration": "newman run './postman/prof_collection.json' -e './postman/prof_environment.json' -r htmlextra --reporter-htmlextra-export './reports/gestionProfil.html' --iteration-data './postman/iteration.json'"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +20,9 @@
     "mongoose": "^8.19.2",
     "nodemailer": "^7.0.10",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1"
   }
 }
