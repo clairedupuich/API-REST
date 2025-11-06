@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: newman-test-report
-          path: reports/RapportNewman.html
+          path: reports/gestionProfil.html
       - name: Add HTML report link
         run: |
           echo "### Rapport newman generé" >> $GITHUB_STEP_SUMMARY
